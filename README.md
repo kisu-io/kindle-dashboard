@@ -21,6 +21,8 @@ cp config_local.example.py config_local.py   # your location, other Macs
 .venv/bin/python server.py
 ```
 
+**Run at login:** `./install_service.sh` installs a LaunchAgent that starts the server when you log in and restarts it if it crashes (log: `~/Library/Logs/kindle-dashboard.log`; remove with `./install_service.sh uninstall`). With FileVault on, macOS waits at the unlock screen after a reboot, so use `sudo fdesetup authrestart` for planned restarts.
+
 Edit `config.py` (or override it in `config_local.py`) to change the location, tickers, news feeds and alert thresholds.
 
 Secrets go in `.secrets.env`, as `KEY=VALUE` lines. It's git-ignored; run `chmod 600 .secrets.env`.
@@ -56,6 +58,7 @@ Exit with the **power button**. The dashboard locks the screen orientation and h
 | `alerts.py`, `news_filter.py`, `quotes.py`, `lunar.py` | alert rules, headline scoring, quotes, âm lịch |
 | `render.py`, `draw_*.py`, `icons.py` | drawing |
 | `touch.py`, `server.py` | touch mapping, server loops and HTTP |
+| `install_service.sh` | run the server at login (LaunchAgent) |
 | `usage_tap.py` | Claude Code status-line tap |
 | `kindle/extensions/dashboard/` | the Kindle side: `dashboard.sh`, `tap.lua`, KUAL menu |
 
