@@ -1,0 +1,16 @@
+# local environment
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+out/
+
+# secrets and personal settings (never commit)
+.secrets.env
+.panasonic-token
+.panasonic-verifier
+.claude_usage.json
+.screen_light
+config_local.py
+kindle/extensions/dashboard/server_url
+kindle/extensions/dashboard/dashboard.log

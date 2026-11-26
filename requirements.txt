@@ -1,0 +1,5 @@
+pillow
+tinytuya
+aio-panasonic-comfort-cloud
+aiohttp
+pytest

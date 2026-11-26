@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kindle dashboard preview</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #2b2b2b; font-family: system-ui, sans-serif; }
+  .kindle { background: #1a1a1a; padding: 28px 90px 28px 28px; border-radius: 28px; box-shadow: 0 20px 60px #0008; }
+  /* Oasis 2 held sideways: 1680x1264, scaled to fit the browser window */
+  img { display: block; width: min(90vw, 1680px, calc(85vh * 1680 / 1264)); aspect-ratio: 1680 / 1264; background: #eee; border-radius: 4px; filter: contrast(0.92) sepia(0.06); }
+  p { color: #aaa; font-size: 13px; text-align: center; margin: 14px 0 0; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="kindle"><img id="screen" src="preview.png" alt="Dashboard as the Kindle will show it"></div>
+    <p>The Kindle gets this same image, rotated to fit its screen. Reloads every 15 s.</p>
+  </div>
+  <script>
+    setInterval(() => { document.getElementById("screen").src = "preview.png?t=" + Date.now(); }, 15000);
+  </script>
+</body>
+</html>

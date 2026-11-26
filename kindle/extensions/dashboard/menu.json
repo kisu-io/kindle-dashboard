@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "name": "Home Dashboard",
+      "items": [
+        {
+          "name": "Start dashboard",
+          "action": "/bin/sh",
+          "params": "/mnt/us/extensions/dashboard/dashboard.sh start",
+          "exitmenu": true
+        },
+        {
+          "name": "Stop dashboard",
+          "action": "/bin/sh",
+          "params": "/mnt/us/extensions/dashboard/dashboard.sh stop"
+        }
+      ]
+    }
+  ]
+}
